@@ -69,9 +69,9 @@ function App() {
         : "";
 
     if (files.length && pathA) {
-      const existenceChecks = files.map((file) => {
-        return `if exist "${pathA}\\${file}" (echo ${file} exists) else (echo ${file} missing)`;
-      });
+    const existenceChecks = files.map((file) => {
+      return `if exist "${pathA}\\${file}" (echo ${file}) else (echo ${file} missing)`;
+    });
       setDiffCommands(existenceChecks.join("\n"));
     } else {
       setDiffCommands("");
@@ -115,7 +115,7 @@ function App() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "diff_commands.bat";
+    a.download = "existance_check.bat";
     a.click();
     URL.revokeObjectURL(url);
   };
