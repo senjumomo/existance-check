@@ -72,7 +72,7 @@ function App() {
     const existenceChecks = files.map((file) => {
       return `if exist "${pathA}\\${file}" (echo ${file}) else (echo ${file} missing)`;
     });
-      setDiffCommands(existenceChecks.join("\n"));
+      setDiffCommands(existenceChecks.join("\n") + "\n\npause");
     } else {
       setDiffCommands("");
     }
