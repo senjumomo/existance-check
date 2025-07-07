@@ -69,14 +69,23 @@ function App() {
         : "";
 
     if (files.length && pathA) {
-    const existenceChecks = files.map((file) => {
-      return `if exist "${pathA}\\${file}" (echo ${file} found) else (echo ${file} missing)`;
-    });
-      setDiffCommands(`@echo off\n${existenceChecks.join("\n")}\n\npause`);
+      const existenceChecks = files.map((file) => {
+        return `if exist "${pathA}\\${file}" (echo ${file} found) else (echo ${file} not found)`;
+      });
+
+      const batContent = `@echo off
+  echo Checking files in ${pathA}
+
+  ${existenceChecks.join("\n")}
+
+  pause`;
+
+      setDiffCommands(batContent);
     } else {
       setDiffCommands("");
     }
   };
+
 
   const onInputChange = (e) => {
     const val = e.target.value;
