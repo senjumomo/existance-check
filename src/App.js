@@ -6,6 +6,9 @@ const clientPaths = {
     QA: "Q:\\BestMed\\qa\\sql",
     LIVE: "Q:\\BestMed\\live",
   },
+  Regression:{
+    REGRESSION: "Q:\\SHIP\\qa\\regression\\deployed\\sql",
+  },
   Ship: {
     QA: "Q:\\SHIP\\qa\\sql",
     LIVE: "Q:\\SHIP\\live\\sql",
@@ -99,6 +102,9 @@ function App() {
     if (val === "Test") {
       setEnvA("TEST");
       updateOutputs(inputText, val, "TEST");
+    } else if (val === "Regression") {
+      setEnvA("REGRESSION");
+      updateOutputs(inputText, val, "REGRESSION");      
     } else {
       setEnvA("QA");
       updateOutputs(inputText, val, "QA");
@@ -158,7 +164,7 @@ function App() {
           </select>
         </div>
 
-        {clientA !== "Test" && (
+        {clientA !== "Test" && clientA !== "Regression" && (
           <div style={styles.dropdownBox}>
             <label style={styles.label}>Environment:</label>
             <select value={envA} onChange={onEnvAChange} style={styles.select}>
