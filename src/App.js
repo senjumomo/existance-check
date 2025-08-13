@@ -136,7 +136,20 @@ function App() {
   };
 
   return (
+
+
+    
     <div style={styles.container}>
+      {/* GitHub clickable text */}
+      <a
+        href="https://github.com/senjumomo"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={styles.githubLink}
+      >
+        View on GitHub
+      </a>
+
       <h2 style={styles.heading}>Paste your deployment scripts here:</h2>
       <textarea
         value={inputText}
