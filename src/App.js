@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaGithub } from "react-icons/fa";
 
 // Client paths including Test client with TEST environment
 const clientPaths = {
@@ -141,13 +142,14 @@ function App() {
     
     <div style={styles.container}>
       {/* GitHub clickable text */}
+      {/* GitHub clickable text */}
       <a
         href="https://github.com/senjumomo"
         target="_blank"
         rel="noopener noreferrer"
         style={styles.githubLink}
       >
-        View on GitHub
+        <FaGithub size={28} /> {/* adjust the size as you like */}
       </a>
 
       <h2 style={styles.heading}>Paste your deployment scripts here:</h2>
@@ -212,6 +214,14 @@ function App() {
 }
 
 const styles = {
+  githubLink: {
+    color: "#eee",
+    textDecoration: "none",
+    fontWeight: "bold",
+    fontSize: "1rem",
+    marginBottom: "1rem",
+    transition: "color 0.2s",
+  },  
   container: {
     padding: "2rem",
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
