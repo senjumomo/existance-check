@@ -18,6 +18,10 @@ const clientPaths = {
     QA: "Q:\\ZimGen\\qa\\sql",
     LIVE: "Q:\\ZimGen\\live\\sql",
   },
+  ZMZ: {
+    QA: "Q:\\ZSIC\\qa\\sql",
+    LIVE: "Q:\\ZSIC\\live\\sql",
+  },  
   HMS: {
     QA: "Q:\\Zimbabwe\\qa\\sql",
     LIVE: "Q:\\Zimbabwe\\live\\sql",
